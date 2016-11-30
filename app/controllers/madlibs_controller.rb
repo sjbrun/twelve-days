@@ -1,4 +1,6 @@
 class MadlibsController < ApplicationController
+  before_action :set_madlib, only: [:show, :edit, :update, :destroy]
+  
   @@lyrics = "On the first day of Christmas, my true love gave to me a partridge in a pear tree.
   
               On the second day of Christmas my true love gave to me two turtle doves
@@ -44,6 +46,12 @@ class MadlibsController < ApplicationController
               Seven swans a swimming, six geese a laying, five golden rings, four calling birds,
               Three French hens, two turtle doves and a Partridge in a pear tree."
   
+  @@defaults = ['partridge in a pear tree', 'turtle doves',
+                'french hens', 'calling birds', 'golden rings',
+                'geese a laying', 'swans a swimming','maids a milking',
+                'ladies dancing', 'lords a leaping', 'pipers piping',
+                'drummers drumming']
+  
   def new
     @madlib = Madlib.new
   end
@@ -57,7 +65,7 @@ class MadlibsController < ApplicationController
       flash[:success] = "Madlib created successfully"
       redirect_to madlib_path(@madlib)
     else
-      render 'new'  ## render new article template in case of failure for another try
+      render 'new'
     end
   end
   
@@ -65,6 +73,16 @@ class MadlibsController < ApplicationController
   end
   
   def show
+    @subs = [@madlib.one, @madlib.two, @madlib.three, @madlib.four,
+            @madlib.five, @madlib.six, @madlib.seven, @madlib.eight,
+            @madlib.nine, @madlib.ten, @madlib.eleven, @madlib.twelve]
+    @lyrics = @@lyrics.downcase
+    (0..11).each do |n|
+       @lyrics.gsub! @@defaults[n], @subs[n]
+    end
+  end
+  
+  def index
   end
   
   def delete
@@ -72,9 +90,14 @@ class MadlibsController < ApplicationController
   
   
   private
-  
+
+  def set_madlib
+    @madlib = Madlib.find(params[:id])
+  end
+
   def madlib_params
-    params.require(:madlib).permit(:nouns, :verbs)
+    params.require(:madlib).permit(:one, :two, :three, :four, :five, :six,
+                            :seven, :eight, :nine, :ten, :eleven, :twelve)
   end
 
 end

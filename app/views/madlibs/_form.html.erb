@@ -1,0 +1,60 @@
+<%#= render "shared/errors", obj: @madlib %>
+
+<div class="panel-body">
+  <%= form_for @madlib do |f| %>
+    <div class="form-group required">
+      <%= f.label "1st (singular)", class: "control-label" %><br>
+      <%= f.text_field :one, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="form-group required">
+      <%= f.label "2nd", class: "control-label" %><br>
+      <%= f.text_field :two, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="form-group required">
+      <%= f.label "3rd", class: "control-label" %><br>
+      <%= f.text_field :three, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="form-group required">
+      <%= f.label "4th", class: "control-label" %><br>
+      <%= f.text_field :four, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="form-group required">
+      <%= f.label "5th", class: "control-label" %><br>
+      <%= f.text_field :five, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="form-group required">
+      <%= f.label "6th", class: "control-label" %><br>
+      <%= f.text_field :six, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="form-group required">
+      <%= f.label "7th", class: "control-label" %><br>
+      <%= f.text_field :seven, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="form-group required">
+      <%= f.label "8th", class: "control-label" %><br>
+      <%= f.text_field :eight, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="form-group required">
+      <%= f.label "9th", class: "control-label" %><br>
+      <%= f.text_field :nine, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="form-group required">
+      <%= f.label "10th", class: "control-label" %><br>
+      <%= f.text_field :ten, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="form-group required">
+      <%= f.label "11th", class: "control-label" %><br>
+      <%= f.text_field :eleven, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="form-group required">
+      <%= f.label "12th", class: "control-label" %><br>
+      <%= f.text_field :twelve, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.submit %>
+    </div>
+    <div class="form-group">
+      [ <%= link_to "Cancel request and return to tunes listing", root_path %> ]
+    </div>
+  <% end %>
+</div> <!-- end panel-body -->

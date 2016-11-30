@@ -11,13 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129233345) do
+ActiveRecord::Schema.define(version: 20161130013651) do
 
   create_table "madlibs", force: :cascade do |t|
     t.text     "verbs"
     t.text     "nouns"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "one"
+    t.string   "two"
+    t.string   "three"
+    t.string   "four"
+    t.string   "five"
+    t.string   "six"
+    t.string   "seven"
+    t.string   "eight"
+    t.string   "nine"
+    t.string   "ten"
+    t.string   "eleven"
+    t.string   "twelve"
   end
 
 end

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  
+  root 'madlibs#index'
   resources :madlibs
   
   # Example resource route with options:
